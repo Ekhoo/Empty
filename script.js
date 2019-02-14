@@ -19,4 +19,4 @@ doc.write('\<script type="text/javascript" src="https:\/\/ekhoo.github.io\/Empty
 doc.close()
 
 myFrame.contentWindow.postMessage("setAccessToken: " + accessToken, "*")
-myFrame.contentWindow.postMessage("setRefreshToken: " + refreshToken, "*")
+//myFrame.contentWindow.postMessage("setRefreshToken: " + refreshToken, "*")
