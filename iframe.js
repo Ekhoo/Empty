@@ -1,5 +1,10 @@
-var accessToken = window.frameElement.getAttribute('accessToken')
-var refreshToken = window.frameElement.getAttribute('refreshToken')
+window.addEventListener("setAccessToken", receiveAccessToken, false)
+window.addEventListener("setRefreshToken", receiveRefreshToken, false)
 
-console.log(accessToken)
-console.log(refreshToken)
+function receiveAccessToken(event) {
+  console.log("ReceiveAccessToken => " + event)
+}
+
+function receiveRefreshToken(event) {
+  console.log("ReceiveRefreshToken => " + event)
+}
