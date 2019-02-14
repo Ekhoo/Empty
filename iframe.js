@@ -1,4 +1,4 @@
-var accesToken = document.currentScript.getAttribute('accessToken')
+var accessToken = document.currentScript.getAttribute('accessToken')
 var refreshToken = document.currentScript.getAttribute('refreshToken')
 
 console.log(accessToken)
