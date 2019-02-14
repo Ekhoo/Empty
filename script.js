@@ -20,6 +20,6 @@ myFrame.contentWindow.foo = function() {
     console.log ("Look at me, executed inside an iframe!")
 }
 
-myFrame.onload = function(e) {
+myFrame.contentWindow.onload = function(e) {
     myFrame.contentWindow.foo()
- }
+}
