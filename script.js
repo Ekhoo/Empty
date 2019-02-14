@@ -16,10 +16,7 @@ console.log("refreshToken => " + refreshToken)
 
 var myFrame = document.getElementById("iframe_id")
 
-myFrame.contentWindow.foo = function() {
-    console.log ("Look at me, executed inside an iframe!")
-}
-
-myFrame.contentWindow.onload = function(e) {
-    myFrame.contentWindow.foo()
-}
+var doc = myFrame.contentWindow.document;
+doc.open();
+doc.write('\<script>console.log("hello from iframe!");\<\/script>');
+doc.close();
