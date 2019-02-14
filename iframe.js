@@ -1,5 +1,5 @@
-var accessToken = document.currentScript.getAttribute('accessToken')
-var refreshToken = document.currentScript.getAttribute('refreshToken')
+var accessToken = window.frameElement.getAttribute('accessToken')
+var refreshToken = window.frameElement.getAttribute('refreshToken')
 
 console.log(accessToken)
 console.log(refreshToken)
