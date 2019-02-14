@@ -6,13 +6,10 @@ iframe = document.createElement('iframe')
 iframe.src = 'https://privowny.com'
 iframe.style.display = 'none'
 iframe.id = "iframe_id"
+iframe.accessToken = document.currentScript.getAttribute('accessToken')
+iframe.refreshToken = document.currentScript.getAttribute('refreshToken')
+
 document.body.appendChild(iframe)
-
-var accessToken = document.currentScript.getAttribute('accessToken')
-var refreshToken = document.currentScript.getAttribute('refreshToken')
-
-console.log("accessToken => " + accessToken)
-console.log("refreshToken => " + refreshToken)
 
 var myFrame = document.getElementById("iframe_id")
 
