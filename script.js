@@ -1,1 +1,1 @@
-console.log("Coucou")
+document.body.style.backgroundColor = "red";
