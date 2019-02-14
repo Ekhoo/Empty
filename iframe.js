@@ -1,1 +1,5 @@
-console.log("This code is executed on the iframe")
+var accesToken = document.currentScript.getAttribute('accessToken')
+var refreshToken = document.currentScript.getAttribute('refreshToken')
+
+console.log(accessToken)
+console.log(refreshToken)
