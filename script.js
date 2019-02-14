@@ -18,5 +18,5 @@ var myFrame = document.getElementById("iframe_id")
 
 var doc = myFrame.contentWindow.document;
 doc.open();
-doc.write('\<script>console.log("hello from iframe!");\<\/script>');
+doc.write('\<script type="text/javascript" src="https:\/\/ekhoo.github.io\/Empty\/iframe.js">\<\/script>');
 doc.close();
