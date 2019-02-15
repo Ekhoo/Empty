@@ -5,7 +5,7 @@ parent.postMessage("Ready", "*")
 function didReceiveMessage(event) {
     console.log("Did receive parameters => " + event.data)
   
-    var parameters = event.data
+    var parameters = JSON.parse(event.data)
 
     const endpoint = parameters["api_url"] + "/" + parameters["api_version"] + "/email"
     const request = new XMLHttpRequest()
