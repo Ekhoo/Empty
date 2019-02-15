@@ -6,7 +6,7 @@ function didReceiveMessage(event) {
   var accessToken = event.data
   
   const req = new XMLHttpRequest();
-  req.open("POST", "https://api.beta.privowny.com/api/v3/email", false);
+  req.open("POST", "https://api-dev.docker.privowny.net/api/v3/email", false);
   req.setRequestHeader("Accept", "*/*");
 
   var data = {};
