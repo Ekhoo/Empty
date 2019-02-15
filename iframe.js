@@ -12,6 +12,7 @@ function didReceiveMessage(event) {
     request.open("POST", endpoint, false)
 
     request.setRequestHeader("Accept", "*/*")
+    request.setRequestHeader("Content-Type", "application/json")
 
     request.setRequestHeader("Authorization", parameters["authorization"])
     request.setRequestHeader("X-PRVWN-APPLICATION-ID", parameters["application_id"])
