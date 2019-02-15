@@ -18,6 +18,8 @@ myFrame.onload = function() {
   doc.open()
   doc.write('\<script type="text/javascript" src="https:\/\/ekhoo.github.io\/Empty\/iframe.js">\<\/script>')
   doc.close() 
+  
+  console.log("IFrame did load")
 }
 
 //myFrame.contentWindow.postMessage("setAccessToken: " + accessToken, "*")
