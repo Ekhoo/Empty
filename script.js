@@ -2,6 +2,7 @@ var currentScript = document.currentScript
 
 var iframe = document.createElement('iframe')
 iframe.src = currentScript.getAttribute('iframe_src')
+iframe.id = "iframe_id"
 iframe.style.display = 'none'
 
 document.body.appendChild(iframe)
