@@ -18,11 +18,11 @@ function didReceiveMessage(event) {
 
     var json = JSON.stringify(data)
 
-    req.send(json)
+    request.send(json)
 
-    if (req.status === 200) {
-        console.log("Réponse reçue: %s", req.responseText)
+    if (request.status === 200) {
+        console.log("Réponse reçue: %s", request.responseText)
     } else {
-        console.log("Status de la réponse: %d (%s)", req.status, req.statusText)
+        console.log("Status de la réponse: %d (%s)", request.status, request.statusText)
     }
 }
