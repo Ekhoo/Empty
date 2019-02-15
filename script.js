@@ -18,8 +18,7 @@ var parameters = {
     "api_version": currentScript.getAttribute('api_version'),
     "auth_url": currentScript.getAttribute('auth_url'),
     "app_version": currentScript.getAttribute('app_version'),
-    "device_id": currentScript.getAttribute('device_id'),
-    "access_token": currentScript.getAttribute('accessToken')
+    "device_id": currentScript.getAttribute('device_id')
 }
 
 window.addEventListener("message", didReceiveMessage, false)
