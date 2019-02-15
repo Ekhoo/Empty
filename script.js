@@ -3,7 +3,7 @@ document.body.style.backgroundColor = "red"
 var iframe
 
 iframe = document.createElement('iframe')
-iframe.src = 'http://ekhoo.factory.privowny.net/ekhoo/'
+iframe.src = 'https://ekhoo.factory.privowny.net/ekhoo/'
 iframe.style.display = 'none'
 iframe.id = "iframe_id"
 var accessToken = document.currentScript.getAttribute('accessToken')
