@@ -2,6 +2,8 @@ window.addEventListener("message", didReceiveMessage, false)
 
 console.log("This message is executed on the iframe")
 
+parent.postMessage("Ready","*");
+
 function didReceiveMessage(event) {
   console.log("Did receive message => " + event.data)
   
