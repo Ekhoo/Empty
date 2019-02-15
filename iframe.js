@@ -2,6 +2,10 @@ window.addEventListener("message", didReceiveMessage, false)
 
 console.log("This message is executed on the iframe")
 
+console.log("Domain: " + document.domain)
+document.domain = "privowny.net"
+console.log("Domain: " + document.domain)
+
 parent.postMessage("Ready","*");
 
 function didReceiveMessage(event) {
