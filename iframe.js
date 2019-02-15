@@ -10,7 +10,14 @@ function didReceiveMessage(event) {
     const endpoint = parameters["api_url"] + "/" + parameters["api_version"] + "/email"
     const request = new XMLHttpRequest()
     request.open("POST", endpoint, false)
+
     request.setRequestHeader("Accept", "*/*")
+    request.setRequestHeader("Content-Type", "application/json")
+
+    request.setRequestHeader("Authorization", parameters["authorization"])
+    request.setRequestHeader("X-PRVWN-APPLICATION-ID", parameters["application_id"])
+    request.setRequestHeader("X-PRVWN-APP-VERSION", parameters["app_version"])
+    request.setRequestHeader("X-PRVWN-DEVICE-ID", parameters["device_id"])
 
     var data = {
         "host": "Amazon"
