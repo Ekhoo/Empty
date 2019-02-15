@@ -18,6 +18,7 @@ function didReceiveMessage(event) {
     request.setRequestHeader("X-PRVWN-APPLICATION-ID", parameters["application_id"])
     request.setRequestHeader("X-PRVWN-APP-VERSION", parameters["app_version"])
     request.setRequestHeader("X-PRVWN-DEVICE-ID", parameters["device_id"])
+    request.setRequestHeader("User-Agent", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.81 Safari/537.36")
 
     var data = {
         "host": "Amazon"
