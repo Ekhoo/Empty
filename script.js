@@ -1,25 +1,30 @@
-document.body.style.backgroundColor = "red"
+var currentScript = document.currentScript
 
-var iframe
-
-iframe = document.createElement('iframe')
-iframe.src = 'https://ekhoo.factory.privowny.net/ekhoo/'
+var iframe = document.createElement('iframe')
+iframe.src = currentScript.getAttribute('iframe_src')
 iframe.style.display = 'none'
-iframe.id = "iframe_id"
-var accessToken = document.currentScript.getAttribute('accessToken')
-var refreshToken = document.currentScript.getAttribute('refreshToken')
 
 document.body.appendChild(iframe)
 
 var myFrame = document.getElementById("iframe_id")
 
+var parameters = {
+    "access_token": currentScript.getAttribute('access_token'),
+    "refresh_token": currentScript.getAttribute('refresh_token'),
+    "application_id": currentScript.getAttribute('application_id'),
+    "authorization": currentScript.getAttribute('authorization'),
+    "api_url": currentScript.getAttribute('api_url'),
+    "api_version": currentScript.getAttribute('api_version'),
+    "auth_url": currentScript.getAttribute('auth_url'),
+    "app_version": currentScript.getAttribute('app_version'),
+    "device_id": currentScript.getAttribute('device_id'),
+    "access_token": currentScript.getAttribute('accessToken')
+}
+
 window.addEventListener("message", didReceiveMessage, false)
 
 function didReceiveMessage(event) {
-  console.log("Parent did receive event: " + event.data)
-  
-  myFrame.contentWindow.postMessage("setAccessToken: " + accessToken, "*")
-}
+    console.log("Did receive iframe ready")
 
-//myFrame.contentWindow.postMessage("setAccessToken: " + accessToken, "*")
-//myFrame.contentWindow.postMessage("setRefreshToken: " + refreshToken, "*")
+    myFrame.contentWindow.postMessage(JSON.stringify(parameters), currentScript.getAttribute('iframe_src'))
+}
