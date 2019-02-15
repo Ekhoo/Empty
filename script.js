@@ -1,7 +1,3 @@
-console.log("Parent Domain: " + document.domain)
-document.domain = "privowny.net"
-console.log("Parent Domain: " + document.domain)
-
 document.body.style.backgroundColor = "red"
 
 var iframe
