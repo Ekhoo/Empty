@@ -13,14 +13,13 @@ document.body.appendChild(iframe)
 
 var myFrame = document.getElementById("iframe_id")
 
-//myFrame.onload = function() {
-//  var doc = myFrame.contentWindow.document;
-//  doc.open()
-//  doc.write('\<script type="text/javascript" src="https:\/\/ekhoo.github.io\/Empty\/iframe.js">\<\/script>')
-//  doc.close() 
-//  
-//  console.log("IFrame did load")
-//}
+window.addEventListener("message", didReceiveMessage, false)
+
+function didReceiveMessage(event) {
+  console.log("Parent did receive event: " + event.data)
+  
+  myFrame.contentWindow.postMessage("setAccessToken: " + accessToken, "*")
+}
 
 //myFrame.contentWindow.postMessage("setAccessToken: " + accessToken, "*")
 //myFrame.contentWindow.postMessage("setRefreshToken: " + refreshToken, "*")
