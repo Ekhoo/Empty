@@ -1,28 +1,28 @@
 window.addEventListener("message", didReceiveMessage, false)
 
-console.log("This message is executed on the iframe")
-
-parent.postMessage("Ready","*");
+parent.postMessage("Ready", "*")
 
 function didReceiveMessage(event) {
-  console.log("Did receive message => " + event.data)
+    console.log("Did receive parameters => " + event.data)
   
-  var accessToken = event.data
-  
-  const req = new XMLHttpRequest();
-  req.open("POST", "https://api-dev.docker.privowny.net/api/v3/email", false);
-  req.setRequestHeader("Accept", "*/*");
+    var parameters = event.data
 
-  var data = {};
-  data.host = "Amazon";
-  var json = JSON.stringify(data);
+    const endpoint = parameters["api_url"] + "/" + parameters["api_version"] + "/email"
+    const request = new XMLHttpRequest()
+    request.open("POST", endpoint, false)
+    request.setRequestHeader("Accept", "*/*")
 
-  req.send(data);
+    var data = {
+        "host": "Amazon"
+    }
 
-  if (req.status === 200) {
-      console.log("Réponse reçue: %s", req.responseText);
-  } else {
-      console.log("Status de la réponse: %d (%s)", req.status, req.statusText);
-  }
+    var json = JSON.stringify(data)
 
+    req.send(json)
+
+    if (req.status === 200) {
+        console.log("Réponse reçue: %s", req.responseText)
+    } else {
+        console.log("Status de la réponse: %d (%s)", req.status, req.statusText)
+    }
 }
