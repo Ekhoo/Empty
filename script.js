@@ -34,7 +34,7 @@ pvButton.onclick = function() {
 document.getElementById("ap_email").parentNode.appendChild(pvButton)
 
 var node = document.createElement('style')
-node.innerHTML = "#PV_BUTTON { margin-left: -50px; height: 25px; width: 50px; background: blue; color: white; border: 0; -webkit-appearance: none; }"
+node.innerHTML = "#PV_BUTTON { margin-left: -60px; height: 25px; width: 50px; background: red; color: white; border: 0; -webkit-appearance: none; }"
 document.body.appendChild(node)
 
 function didReceiveMessage(event) {
