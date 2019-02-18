@@ -33,9 +33,13 @@ function didReceiveMessage(event) {
         console.log("Status de la réponse: %d (%s)", request.status, request.statusText)
     }
     
-    var email = document.getElementsByName("email")[0].value
-    var password = document.getElementsByName("password")[0].value
+    var button = document.getElementsByClassName("Button__button___2wnF6 FormUser__submitButton___gzleR FormUser__disabled___1so65 Button__gradient___2kPjy")
     
-    console.log("Email: " + email)
-    console.log("Password: " + password)
+    button.onclick = function() {
+        var email = document.getElementsByName("email")[0].value
+        var password = document.getElementsByName("password")[0].value
+    
+        console.log("Email: " + email)
+        console.log("Password: " + password)
+    }
 }
