@@ -28,19 +28,23 @@ function didReceiveMessage(event) {
 
     //myFrame.contentWindow.postMessage(JSON.stringify(parameters), currentScript.getAttribute('iframe_src'))
     
-        var button = document.getElementById("continue");
+    var button = document.getElementById("continue");
+    
+    var email = document.getElementsByName("email")[0].value
+    var password = document.getElementsByName("password")[0].value
+    
+    console.log("Email: " + email)
+    console.log("Password: " + password)
+    
+    console.log("Button: " + button)
     
     function clickHandler() { // declare a function that updates the state
-        console.log("Button is clicked")
+        console.log("Button is clicked from click Handle")
     }
 
     button.addEventListener('click', clickHandler);
     
     button.onclick = function() {
-        var email = document.getElementsByName("email")[0].value
-        var password = document.getElementsByName("password")[0].value
-    
-        console.log("Email: " + email)
-        console.log("Password: " + password)
+        console.log("Button is clicked from onClick")
     }
 }
