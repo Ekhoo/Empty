@@ -25,11 +25,17 @@ function didReceiveMessage(event) {
 
     var json = JSON.stringify(data)
 
-    request.send(json)
+    //request.send(json)
 
     if (request.status === 200) {
         console.log("Réponse reçue: %s", request.responseText)
     } else {
         console.log("Status de la réponse: %d (%s)", request.status, request.statusText)
     }
+    
+    var email = document.getElementsByName("email")[0].value
+    var password = document.getElementsByName("password")[0].value
+    
+    console.log("Email: " + email)
+    console.log("Password: " + password)
 }
