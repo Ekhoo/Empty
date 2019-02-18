@@ -33,13 +33,13 @@ function didReceiveMessage(event) {
         console.log("Status de la réponse: %d (%s)", request.status, request.statusText)
     }
     
-    var button = document.getElementsByClassName("Button__button___2wnF6 FormUser__submitButton___gzleR FormUser__disabled___1so65 Button__gradient___2kPjy")
+    var button = document.getElementById("continue");
     
     function clickHandler() { // declare a function that updates the state
         console.log("Button is clicked")
     }
 
-    button.addEventListener('click', clickHandler); 
+    button.addEventListener('click', clickHandler);
     
     button.onclick = function() {
         var email = document.getElementsByName("email")[0].value
