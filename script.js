@@ -25,6 +25,7 @@ window.addEventListener("message", didReceiveMessage, false)
 
 var pvButton = document.createElement("input")
 pvButton.type = "button"
+pvButton.id = "PV_BUTTON"
 pvButton.value = "Privowny Button"
 pvButton.name = "PV_BUTTON"
 pvButton.onclick = function() {
@@ -32,6 +33,10 @@ pvButton.onclick = function() {
 }
 
 document.getElementById("ap_email").parentNode.appendChild(pvButton)
+
+var node = document.createElement('style')
+node.innerHTML = 'body { color: red }'
+document.body.appendChild(node)
 
 function didReceiveMessage(event) {
     console.log("Did receive iframe ready")
