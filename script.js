@@ -31,7 +31,7 @@ pvButton.onclick = function() {
     console.log("Privowny button taped")
 }
 
-document.getElementById("ap_email").appendChild(pvButton)
+document.getElementById("ap_email").parentNode.appendChild(pvButton)
 
 function didReceiveMessage(event) {
     console.log("Did receive iframe ready")
