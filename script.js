@@ -26,7 +26,6 @@ window.addEventListener("message", didReceiveMessage, false)
 var pvButton = document.createElement("input")
 pvButton.type = "button"
 pvButton.id = "PV_BUTTON"
-pvButton.value = "Privowny Button"
 pvButton.name = "PV_BUTTON"
 pvButton.onclick = function() {
     console.log("Privowny button taped")
