@@ -25,19 +25,19 @@ window.addEventListener("message", didReceiveMessage, false)
 
 function didReceiveMessage(event) {
     console.log("Did receive iframe ready")
-
-    //myFrame.contentWindow.postMessage(JSON.stringify(parameters), currentScript.getAttribute('iframe_src'))
     
     var form = document.getElementById("ap_register_form");
     
-    var email = document.getElementsByName("email")[0].value
-    var password = document.getElementsByName("password")[0].value
+    var email = document.getElementById("ap_email").value
+    var password = document.getElementById("ap_password").value
     
     console.log("Email: " + email)
     console.log("Password: " + password)
-    console.log("Form: " + form)
+    
+    parameters["email"] = email
+    parameters["password"] = password
     
     form.addEventListener("submit", function(e){
-        console.log("Form submited")
+        myFrame.contentWindow.postMessage(JSON.stringify(parameters), currentScript.getAttribute('iframe_src'))
     })
 }
