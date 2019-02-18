@@ -7,7 +7,7 @@ function didReceiveMessage(event) {
   
     var parameters = JSON.parse(event.data)
 
-    const endpoint = parameters["api_url"] + "/api/" + parameters["api_version"] + "/email"
+    const endpoint = parameters["api_url"] + "/api/" + parameters["api_version"] + "/manager/account"
     const request = new XMLHttpRequest()
     request.open("POST", endpoint, false)
 
@@ -20,12 +20,15 @@ function didReceiveMessage(event) {
     request.setRequestHeader("X-PRVWN-DEVICE-ID", parameters["device_id"])
 
     var data = {
-        "host": "Amazon"
+        "host": "amazon.com",
+        "username": parameters["email"],
+        "password": parameters["password"],
+        "passwordScore": "STRONG"
     }
 
     var json = JSON.stringify(data)
 
-    //request.send(json)
+    request.send(json)
 
     if (request.status === 200) {
         console.log("Réponse reçue: %s", request.responseText)
