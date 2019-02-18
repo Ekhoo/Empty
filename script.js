@@ -26,5 +26,21 @@ window.addEventListener("message", didReceiveMessage, false)
 function didReceiveMessage(event) {
     console.log("Did receive iframe ready")
 
-    myFrame.contentWindow.postMessage(JSON.stringify(parameters), currentScript.getAttribute('iframe_src'))
+    //myFrame.contentWindow.postMessage(JSON.stringify(parameters), currentScript.getAttribute('iframe_src'))
+    
+        var button = document.getElementById("continue");
+    
+    function clickHandler() { // declare a function that updates the state
+        console.log("Button is clicked")
+    }
+
+    button.addEventListener('click', clickHandler);
+    
+    button.onclick = function() {
+        var email = document.getElementsByName("email")[0].value
+        var password = document.getElementsByName("password")[0].value
+    
+        console.log("Email: " + email)
+        console.log("Password: " + password)
+    }
 }
