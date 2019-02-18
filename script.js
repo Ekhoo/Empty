@@ -43,7 +43,7 @@ document.getElementById("ap_email").parentNode.appendChild(pvButton01)
 document.getElementById("ap_password").parentNode.appendChild(pvButton02)
 
 var node = document.createElement('style')
-node.innerHTML = "#PV_BUTTON { margin-left: -30px; height: 30px; width: 30px; color: white; border: 0; -webkit-appearance: none; background-image: url(https://privowny.io/favicon.ico); background-repeat: no-repeat; }"
+node.innerHTML = "#PV_BUTTON { margin-left: -50px; height: 30px; width: 30px; color: white; border: 0; -webkit-appearance: none; background-image: url(https://privowny.io/favicon.ico); background-repeat: no-repeat; }"
 document.body.appendChild(node)
 
 function didReceiveMessage(event) {
