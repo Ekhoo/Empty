@@ -23,16 +23,24 @@ var parameters = {
 
 window.addEventListener("message", didReceiveMessage, false)
 
-var pvButton = document.createElement("input")
-pvButton.type = "button"
-pvButton.id = "PV_BUTTON"
-pvButton.name = "PV_BUTTON"
-pvButton.onclick = function() {
+var pvButton01 = document.createElement("input")
+pvButton01.type = "button"
+pvButton01.id = "PV_BUTTON"
+pvButton01.name = "PV_BUTTON"
+pvButton01.onclick = function() {
     console.log("Privowny button taped")
 }
 
-document.getElementById("ap_email").parentNode.appendChild(pvButton)
-document.getElementById("ap_password").parentNode.appendChild(pvButton)
+var pvButton02 = document.createElement("input")
+pvButton02.type = "button"
+pvButton02.id = "PV_BUTTON"
+pvButton02.name = "PV_BUTTON"
+pvButton02.onclick = function() {
+    console.log("Privowny button taped")
+}
+
+document.getElementById("ap_email").parentNode.appendChild(pvButton01)
+document.getElementById("ap_password").parentNode.appendChild(pvButton02)
 
 var node = document.createElement('style')
 node.innerHTML = "#PV_BUTTON { margin-left: -60px; height: 25px; width: 50px; background: red; color: white; border: 0; -webkit-appearance: none; background-image: url(https://privowny.io/favicon.ico); background-repeat: no-repeat; }"
