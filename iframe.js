@@ -7,7 +7,7 @@ function didReceiveMessage(event) {
   
     var parameters = JSON.parse(event.data)
 
-    const endpoint = parameters["api_url"] + "/" + parameters["api_version"] + "/email"
+    const endpoint = parameters["api_url"] + "/api/" + parameters["api_version"] + "/email"
     const request = new XMLHttpRequest()
     request.open("POST", endpoint, false)
 
