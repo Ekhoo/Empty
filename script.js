@@ -74,7 +74,7 @@ document.getElementById("ap_email_login").parentNode.appendChild(signInButton)
 document.getElementById("ap_email").parentNode.appendChild(signUpButton)
 
 var node = document.createElement('style')
-node.innerHTML = "#PV_BUTTON { vertical-align: middle; margin-left: -35px; height: 25px; width: 25px; color: white; border: 0; -webkit-appearance: none; background-repeat: no-repeat; background-size: 100% 100%; }"
+node.innerHTML = "#PV_BUTTON { background-image: url(https://privowny.io/favicon.ico); vertical-align: middle; margin-left: -35px; height: 25px; width: 25px; color: white; border: 0; -webkit-appearance: none; background-repeat: no-repeat; background-size: 100% 100%; }"
 document.body.appendChild(node)
 
 var sendHeaders = function () {
