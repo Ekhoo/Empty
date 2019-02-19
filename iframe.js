@@ -88,8 +88,6 @@ var retrieveAccount = function (parameters) {
 
     var username = JSON.parse(request.responseText)["data"]["accounts"]["Amazon"][0]["username"]
 
-    console.log(request.responseText)
-
     var response = {
         "command": "RETRIEVE_ACCOUNT",
         "username": username
