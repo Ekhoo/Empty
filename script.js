@@ -71,7 +71,7 @@ signUpButton.onclick = function() {
     document.getElementById("ap_email").parentNode.appendChild(generateButton)
 }
 
-document.getElementById("ap_email_login").parentNode.appendChild(signInButton)
+document.getElementById("ap_email_icon").appendChild(signInButton)
 document.getElementById("ap_email").parentNode.appendChild(signUpButton)
 
 var node = document.createElement('style')
