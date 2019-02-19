@@ -53,18 +53,28 @@ retrieveButton.name = "RETRIEVE_BUTTON"
 retrieveButton.value = "Retrieve account"
 retrieveButton.onclick = retrieveAccount
 
-var pvButton = document.createElement("input")
-pvButton.type = "button"
-pvButton.id = "PV_BUTTON"
-pvButton.name = "PV_BUTTON"
-pvButton.onclick = function() {
-    console.log("Script: Privowny button taped")
+var signInButton = document.createElement("input")
+signInButton.type = "button"
+signInButton.id = "PV_BUTTON"
+signInButton.name = "PV_BUTTON"
+signInButton.onclick = function() {
+    console.log("Script: Privowny sign in button taped")
 
-    document.getElementById("ap_email_login").parentNode.appendChild(generateButton)
     document.getElementById("ap_email_login").parentNode.appendChild(retrieveButton)
 }
 
-document.getElementById("ap_email_login").parentNode.appendChild(pvButton)
+var signUpButton = document.createElement("input")
+signUpButton.type = "button"
+signUpButton.id = "PV_BUTTON"
+signUpButton.name = "PV_BUTTON"
+signUpButton.onclick = function() {
+    console.log("Script: Privowny sign up button taped")
+
+    document.getElementById("ap_email_login").parentNode.appendChild(generateButton)
+}
+
+document.getElementById("ap_email_login").parentNode.appendChild(signInButton)
+document.getElementById("ap_email").parentNode.appendChild(signUpButton)
 
 var node = document.createElement('style')
 node.innerHTML = "#PV_BUTTON { margin-left: -35px; height: 25px; width: 25px; color: white; border: 0; -webkit-appearance: none; background-image: url(https://privowny.io/favicon.ico); background-repeat: no-repeat; background-size: 100% 100%; }"
