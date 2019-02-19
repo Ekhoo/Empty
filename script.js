@@ -29,19 +29,19 @@ generateButton.id = "GENERATE_BUTTON"
 generateButton.name = "GENERATE_BUTTON"
 generateButton.value = "Generate Alias"
 generateButton.onclick = function() {
-    document.getElementById("ap_email_login").parentNode.removeChild(retreiveButton)
+    document.getElementById("ap_email_login").parentNode.removeChild(retrieveButton)
     document.getElementById("ap_email_login").parentNode.removeChild(generateButton)
 }
 
-var retreiveButton = document.createElement("input")
-retreiveButton.type = "button"
-retreiveButton.id = "RETREIVE_BUTTON"
-retreiveButton.name = "RETREIVE_BUTTON"
-retreiveButton.value = "Generate"
-retreiveButton.onclick = function() {
+var retrieveButton = document.createElement("input")
+retrieveButton.type = "button"
+retrieveButton.id = "RETRIEVE_BUTTON"
+retrieveButton.name = "RETRIEVE_BUTTON"
+retrieveButton.value = "Retrieve account"
+retrieveButton.onclick = function() {
     console.log("Retreive button taped")
 
-    document.getElementById("ap_email_login").parentNode.removeChild(retreiveButton)
+    document.getElementById("ap_email_login").parentNode.removeChild(retrieveButton)
     document.getElementById("ap_email_login").parentNode.removeChild(generateButton)
 }
 
@@ -53,7 +53,7 @@ pvButton.onclick = function() {
     console.log("Privowny button taped")
 
     document.getElementById("ap_email_login").parentNode.appendChild(generateButton)
-    document.getElementById("ap_email_login").parentNode.appendChild(retreiveButton)
+    document.getElementById("ap_email_login").parentNode.appendChild(retrieveButton)
 }
 
 document.getElementById("ap_email_login").parentNode.appendChild(pvButton)
