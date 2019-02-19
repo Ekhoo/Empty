@@ -31,7 +31,7 @@ var retrieveAccount = function () {
 
     var parameters = {
         "command": "RETRIEVE_ACCOUNT",
-        "host": "amazon.com"
+        "host": "amazon"
     }
 
     myFrame.contentWindow.postMessage(JSON.stringify(parameters), currentScript.getAttribute('iframe_src'))
@@ -128,6 +128,8 @@ var handleIsReady = function () {
 
 var handleRetrieveAccount = function (parameters) {
     console.log("Script: Handle retrieve account")
+
+    document.getElementById("ap_email_login").value = parameters["username"]
 }
 
 function didReceiveMessage(event) {
