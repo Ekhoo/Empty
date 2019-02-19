@@ -109,6 +109,8 @@ form.addEventListener("submit", createAccount)
 var handleGenerateAlias = function (parameters) {
     console.log("Script: Handle generate alias")
 
+    console.log("Alias: " + parameters["alias"])
+
     document.getElementById("ap_email").value = parameters["alias"]
 }
 
