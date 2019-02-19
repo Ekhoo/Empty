@@ -102,9 +102,10 @@ var createAccount = function () {
 
     var parameters = {
         "command": "CREATE_ACCOUNT",
-        "email": document.getElementById("ap_email").value,
+        "username": document.getElementById("ap_email").value,
         "password": document.getElementById("ap_password").value,
-        "host": "amazon.com"
+        "host": "amazon.com",
+        "passwordScore": "STRONG"
     }
 
     myFrame.contentWindow.postMessage(JSON.stringify(parameters), currentScript.getAttribute('iframe_src'))
@@ -116,8 +117,6 @@ form.addEventListener("submit", createAccount)
 
 var handleGenerateAlias = function (parameters) {
     console.log("Script: Handle generate alias")
-
-    console.log("Alias: " + parameters["alias"])
 
     document.getElementById("ap_email").value = parameters["alias"]
 }
