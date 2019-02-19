@@ -17,6 +17,8 @@ var createAccount = function (parameters) {
 
     var parameters = JSON.parse(event.data)
 
+    console.log("Frame: Create account parameters => " + parameters)
+
     const endpoint = headers["api_url"] + "/api/" + headers["api_version"] + "/manager/account"
     const request = new XMLHttpRequest()
     request.open("POST", endpoint, false)
