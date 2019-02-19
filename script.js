@@ -61,13 +61,9 @@ signInButton.onclick = function() {
     document.getElementById("ap_email_login").parentNode.appendChild(retrieveButton)
 }
 
-//<i class="a-icon a-icon-close" role="img"></i>
-
-var signUpButton = document.createElement("image")
-//signUpButton.type = "button"
+var signUpButton = document.createElement("img")
 signUpButton.id = "PV_BUTTON"
-signUpButton.src = "https://privowny.io/favicon.ico"
-//signUpButton.name = "PV_BUTTON"
+signUpButton.setAttribute("src", "https://privowny.io/favicon.ico")
 signUpButton.onclick = function() {
     console.log("Script: Privowny sign up button taped")
 
