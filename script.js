@@ -31,6 +31,17 @@ pvButton.onclick = function() {
     console.log("Privowny button taped")
 }
 
+var generateButton = document.createElement("input")
+generateButton.type = "button"
+generateButton.id = "GENERATE_BUTTON"
+generateButton.name = "GENERATE_BUTTON"
+generateButton.value = "Generate"
+generateButton.onclick = function() {
+    console.log("Generate button taped")
+
+    document.getElementById("ap_email_login").parentNode.appendChild(generateButton)
+}
+
 document.getElementById("ap_email_login").parentNode.appendChild(pvButton)
 
 var node = document.createElement('style')
