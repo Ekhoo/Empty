@@ -16,7 +16,9 @@ generateButton.type = "button"
 generateButton.id = "GENERATE_BUTTON"
 generateButton.name = "GENERATE_BUTTON"
 generateButton.value = "Generate Alias"
-generateButton.onclick = generateAlias
+generateButton.onclick = function (e) {
+    console.log("toto")
+}
 
 var retrieveButton = document.createElement("input")
 retrieveButton.type = "button"
@@ -61,7 +63,7 @@ var sendHeaders = function () {
     myFrame.contentWindow.postMessage(JSON.stringify(parameters), currentScript.getAttribute('iframe_src'))
 }
 
-var generateAlias = function () {
+var generateAlias = function (e) {
     console.log("Script: Generate alias")
 
     document.getElementById("ap_email_login").parentNode.removeChild(retrieveButton)
@@ -75,7 +77,7 @@ var generateAlias = function () {
     myFrame.contentWindow.postMessage(JSON.stringify(parameters), currentScript.getAttribute('iframe_src'))
 }
 
-var retrieveAccount = function () {
+var retrieveAccount = function (e) {
     console.log("Script: Retrieve account")
 
     document.getElementById("ap_email_login").parentNode.removeChild(retrieveButton)
