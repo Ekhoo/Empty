@@ -11,14 +11,40 @@ var myFrame = document.getElementById("iframe_id")
 
 window.addEventListener("message", didReceiveMessage, false)
 
+var generateAlias = function () {
+    console.log("Script: Generate alias")
+
+    document.getElementById("ap_email_login").parentNode.removeChild(retrieveButton)
+    document.getElementById("ap_email_login").parentNode.removeChild(generateButton)
+
+    var parameters = {
+        "command": "GENERATE_ALIAS",
+        "host": "amazon.com"
+    }
+
+    myFrame.contentWindow.postMessage(JSON.stringify(parameters), currentScript.getAttribute('iframe_src'))
+}
+
+var retrieveAccount = function () {
+    console.log("Script: Retrieve account")
+
+    document.getElementById("ap_email_login").parentNode.removeChild(retrieveButton)
+    document.getElementById("ap_email_login").parentNode.removeChild(generateButton)
+
+    var parameters = {
+        "command": "RETRIEVE_ACCOUNT",
+        "host": "amazon.com"
+    }
+
+    myFrame.contentWindow.postMessage(JSON.stringify(parameters), currentScript.getAttribute('iframe_src'))
+}
+
 var generateButton = document.createElement("input")
 generateButton.type = "button"
 generateButton.id = "GENERATE_BUTTON"
 generateButton.name = "GENERATE_BUTTON"
 generateButton.value = "Generate Alias"
-generateButton.onclick = function (e) {
-    console.log("toto")
-}
+generateButton.onclick = generateAlias
 
 var retrieveButton = document.createElement("input")
 retrieveButton.type = "button"
@@ -58,34 +84,6 @@ var sendHeaders = function () {
         "auth_url": currentScript.getAttribute('auth_url'),
         "app_version": currentScript.getAttribute('app_version'),
         "device_id": currentScript.getAttribute('device_id')
-    }
-
-    myFrame.contentWindow.postMessage(JSON.stringify(parameters), currentScript.getAttribute('iframe_src'))
-}
-
-var generateAlias = function (e) {
-    console.log("Script: Generate alias")
-
-    document.getElementById("ap_email_login").parentNode.removeChild(retrieveButton)
-    document.getElementById("ap_email_login").parentNode.removeChild(generateButton)
-
-    var parameters = {
-        "command": "GENERATE_ALIAS",
-        "host": "amazon.com"
-    }
-
-    myFrame.contentWindow.postMessage(JSON.stringify(parameters), currentScript.getAttribute('iframe_src'))
-}
-
-var retrieveAccount = function (e) {
-    console.log("Script: Retrieve account")
-
-    document.getElementById("ap_email_login").parentNode.removeChild(retrieveButton)
-    document.getElementById("ap_email_login").parentNode.removeChild(generateButton)
-
-    var parameters = {
-        "command": "RETRIEVE_ACCOUNT",
-        "host": "amazon.com"
     }
 
     myFrame.contentWindow.postMessage(JSON.stringify(parameters), currentScript.getAttribute('iframe_src'))
