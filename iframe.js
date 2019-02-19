@@ -26,8 +26,8 @@ var createAccount = function (parameters) {
 
     request.setRequestHeader("Authorization", headers["authorization"])
     //request.setRequestHeader("X-PRVWN-APPLICATION-ID", headers["application_id"])
-    request.setRequestHeader("X-PRVWN-APP-VERSION", headers["app_version"])
-    request.setRequestHeader("X-PRVWN-DEVICE-ID", headers["device_id"])
+    //request.setRequestHeader("X-PRVWN-APP-VERSION", headers["app_version"])
+    //request.setRequestHeader("X-PRVWN-DEVICE-ID", headers["device_id"])
 
     var data = {
         "host": "Amazon"
