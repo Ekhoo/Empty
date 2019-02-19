@@ -61,10 +61,13 @@ signInButton.onclick = function() {
     document.getElementById("ap_email_login").parentNode.appendChild(retrieveButton)
 }
 
-var signUpButton = document.createElement("input")
-signUpButton.type = "button"
+//<i class="a-icon a-icon-close" role="img"></i>
+
+var signUpButton = document.createElement("image")
+//signUpButton.type = "button"
 signUpButton.id = "PV_BUTTON"
-signUpButton.name = "PV_BUTTON"
+signUpButton.src = "https://privowny.io/favicon.ico"
+//signUpButton.name = "PV_BUTTON"
 signUpButton.onclick = function() {
     console.log("Script: Privowny sign up button taped")
 
@@ -75,7 +78,7 @@ document.getElementById("ap_email_icon").appendChild(signInButton)
 document.getElementById("ap_email").parentNode.appendChild(signUpButton)
 
 var node = document.createElement('style')
-node.innerHTML = "#PV_BUTTON { margin-left: -35px; height: 25px; width: 25px; color: white; border: 0; -webkit-appearance: none; background-image: url(https://privowny.io/favicon.ico); background-repeat: no-repeat; background-size: 100% 100%; }"
+node.innerHTML = "#PV_BUTTON { margin-left: -35px; height: 25px; width: 25px; color: white; border: 0; -webkit-appearance: none; background-repeat: no-repeat; background-size: 100% 100%; }"
 document.body.appendChild(node)
 
 var sendHeaders = function () {
