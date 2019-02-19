@@ -40,7 +40,7 @@ var generateAlias = function (parameters) {
 
     console.log(request.responseText)
 
-    var alias = JSON.parse(request.responseText)["data"]["alias"]
+    var alias = JSON.parse(request.responseText)["data"]["email"]
 
     var response = {
         "command": "GENERATE_ALIAS",
