@@ -17,8 +17,6 @@ var createAccount = function (parameters) {
 
     var parameters = JSON.parse(event.data)
 
-    console.log("Frame: Create account parameters => " + parameters)
-
     const endpoint = headers["api_url"] + "/api/" + headers["api_version"] + "/manager/account"
     const request = new XMLHttpRequest()
     request.open("POST", endpoint, false)
@@ -74,6 +72,28 @@ var generateAlias = function (parameters) {
 
 var retrieveAccount = function (parameters) {
     console.log("Frame: Retrieve account")
+
+    var parameters = JSON.parse(event.data)
+
+    const endpoint = headers["api_url"] + "/api/" + headers["api_version"] + "/manager/account/data?max=1000&offset=0"
+    const request = new XMLHttpRequest()
+    request.open("GET", endpoint, false)
+
+    request.setRequestHeader("Accept", "*/*")
+    request.setRequestHeader("Content-Type", "application/json")
+
+    request.setRequestHeader("Authorization", headers["authorization"])
+
+    request.send(null)
+
+    var username = JSON.parse(request.responseText)["data"]["email"]
+
+    var response = {
+        "command": "RETRIEVE_ACCOUNT",
+        "username": username
+    }
+
+    parent.postMessage(JSON.stringify(response), "*")
 }
 
 var setHeaders = function (parameters) {
