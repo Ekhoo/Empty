@@ -14,7 +14,11 @@ window.onload = function() {
 
 var createAccount = function (parameters) {
     console.log("Frame: Create account")
-  
+}
+
+var generateAlias = function (parameters) {
+    console.log("Frame: Generate alias")
+
     var parameters = JSON.parse(event.data)
 
     const endpoint = headers["api_url"] + "/api/" + headers["api_version"] + "/email"
@@ -25,27 +29,25 @@ var createAccount = function (parameters) {
     request.setRequestHeader("Content-Type", "application/json")
 
     request.setRequestHeader("Authorization", headers["authorization"])
-    //request.setRequestHeader("X-PRVWN-APPLICATION-ID", headers["application_id"])
-    //request.setRequestHeader("X-PRVWN-APP-VERSION", headers["app_version"])
-    //request.setRequestHeader("X-PRVWN-DEVICE-ID", headers["device_id"])
 
     var data = {
-        "host": "Amazon"
+        "host": parameters["host"]
     }
 
     var json = JSON.stringify(data)
 
     request.send(json)
 
-    if (request.status === 200) {
-        console.log("Réponse reçue: %s", request.responseText)
-    } else {
-        console.log("Status de la réponse: %d (%s)", request.status, request.statusText)
-    }
-}
+    console.log(request.responseText)
 
-var generateAlias = function (parameters) {
-    console.log("Frame: Generate alias")
+    var alias = JSON.parse(request.responseText)["data"]["alias"]
+
+    var response = {
+        "command": "GENERATE_ALIAS",
+        "alias": alias
+    }
+
+    parent.postMessage(JSON.stringify(response), "*")
 }
 
 var retrieveAccount = function (parameters) {
