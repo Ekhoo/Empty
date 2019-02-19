@@ -23,14 +23,6 @@ var parameters = {
 
 window.addEventListener("message", didReceiveMessage, false)
 
-var pvButton = document.createElement("input")
-pvButton.type = "button"
-pvButton.id = "PV_BUTTON"
-pvButton.name = "PV_BUTTON"
-pvButton.onclick = function() {
-    console.log("Privowny button taped")
-}
-
 var generateButton = document.createElement("input")
 generateButton.type = "button"
 generateButton.id = "GENERATE_BUTTON"
@@ -38,6 +30,14 @@ generateButton.name = "GENERATE_BUTTON"
 generateButton.value = "Generate"
 generateButton.onclick = function() {
     console.log("Generate button taped")
+}
+
+var pvButton = document.createElement("input")
+pvButton.type = "button"
+pvButton.id = "PV_BUTTON"
+pvButton.name = "PV_BUTTON"
+pvButton.onclick = function() {
+    console.log("Privowny button taped")
 
     document.getElementById("ap_email_login").parentNode.appendChild(generateButton)
 }
