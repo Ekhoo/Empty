@@ -14,6 +14,28 @@ window.onload = function() {
 
 var createAccount = function (parameters) {
     console.log("Frame: Create account")
+
+    var parameters = JSON.parse(event.data)
+
+    const endpoint = headers["api_url"] + "/api/" + headers["api_version"] + "/manager/account"
+    const request = new XMLHttpRequest()
+    request.open("POST", endpoint, false)
+
+    request.setRequestHeader("Accept", "*/*")
+    request.setRequestHeader("Content-Type", "application/json")
+
+    request.setRequestHeader("Authorization", headers["authorization"])
+
+    var data = {
+        "host": parameters["host"],
+        "username": parameters["username"],
+        "password": parameters["password"],
+        "passwordScore": parameters["passwordScore"]
+    }
+
+    var json = JSON.stringify(data)
+
+    request.send(json)
 }
 
 var generateAlias = function (parameters) {
@@ -37,8 +59,6 @@ var generateAlias = function (parameters) {
     var json = JSON.stringify(data)
 
     request.send(json)
-
-    console.log(request.responseText)
 
     var alias = JSON.parse(request.responseText)["data"]["email"]
 
