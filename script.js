@@ -14,8 +14,7 @@ window.addEventListener("message", didReceiveMessage, false)
 var generateAlias = function () {
     console.log("Script: Generate alias")
 
-    document.getElementById("ap_email_login").parentNode.removeChild(retrieveButton)
-    document.getElementById("ap_email_login").parentNode.removeChild(generateButton)
+    document.getElementById("ap_email").parentNode.removeChild(generateButton)
 
     var parameters = {
         "command": "GENERATE_ALIAS",
@@ -29,7 +28,6 @@ var retrieveAccount = function () {
     console.log("Script: Retrieve account")
 
     document.getElementById("ap_email_login").parentNode.removeChild(retrieveButton)
-    document.getElementById("ap_email_login").parentNode.removeChild(generateButton)
 
     var parameters = {
         "command": "RETRIEVE_ACCOUNT",
