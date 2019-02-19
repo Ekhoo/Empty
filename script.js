@@ -70,7 +70,7 @@ signUpButton.name = "PV_BUTTON"
 signUpButton.onclick = function() {
     console.log("Script: Privowny sign up button taped")
 
-    document.getElementById("ap_email_login").parentNode.appendChild(generateButton)
+    document.getElementById("ap_email").parentNode.appendChild(generateButton)
 }
 
 document.getElementById("ap_email_login").parentNode.appendChild(signInButton)
