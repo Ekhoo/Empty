@@ -119,7 +119,7 @@ var handleGenerateAlias = function (parameters) {
 
     console.log("Alias: " + parameters["alias"])
 
-    document.getElementById("ap_email_login").value = parameters["alias"]
+    document.getElementById("ap_email").value = parameters["alias"]
 }
 
 var handleIsReady = function () {
