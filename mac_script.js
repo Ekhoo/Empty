@@ -58,7 +58,7 @@ signInButton.name = "PV_BUTTON"
 signInButton.onclick = function() {
     console.log("Script: Privowny sign in button taped")
 
-    document.getElementById("ap_email_login").parentNode.appendChild(retrieveButton)
+    document.getElementById("ap_email").parentNode.appendChild(retrieveButton)
 }
 
 var signUpButton = document.createElement("img")
@@ -135,7 +135,7 @@ function handleIsReady() {
 function handleRetrieveAccount(parameters) {
     console.log("Script: Handle retrieve account")
 
-    document.getElementById("ap_email_login").value = parameters["username"]
+    document.getElementById("ap_email").value = parameters["username"]
 }
 
 function didReceiveMessage(event) {
