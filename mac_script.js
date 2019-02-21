@@ -72,13 +72,16 @@ signUpButton.onclick = function() {
 
 var apEmailLogin = document.getElementById("ap_email_login")
 var apEmail = document.getElementById("ap_email")
+var signInButton = document.getElementById("signInSubmit")
 
 if (apEmailLogin != null) {
     apEmailLogin.parentNode.appendChild(signInButton)    
 }
 
-if (apEmail != null) {
+if ((apEmail != null) && (signInButton != nil)) {
     apEmail.parentNode.appendChild(signUpButton)
+} else {
+    apEmail.parentNode.appendChild(signInButton)
 }
 
 var node = document.createElement('style')
