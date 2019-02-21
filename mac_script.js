@@ -14,7 +14,7 @@ window.addEventListener("message", didReceiveMessage, false)
 function generateAlias(e) {
     console.log("Script: Generate alias")
 
-    e.stopPropagation()
+    e.preventDefault()
     
     document.getElementById("ap_email").parentNode.removeChild(generateButton)
 
@@ -29,7 +29,7 @@ function generateAlias(e) {
 function retrieveAccount(e) {
     console.log("Script: Retrieve account")
 
-    e.stopPropagation()
+    e.preventDefault()
     
     document.getElementById("ap_email").parentNode.removeChild(retrieveButton)
 
