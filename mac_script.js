@@ -11,7 +11,7 @@ var myFrame = document.getElementById("iframe_id")
 
 window.addEventListener("message", didReceiveMessage, false)
 
-var generateAlias = function () {
+function generateAlias() {
     console.log("Script: Generate alias")
 
     document.getElementById("ap_email").parentNode.removeChild(generateButton)
@@ -24,7 +24,7 @@ var generateAlias = function () {
     myFrame.contentWindow.postMessage(JSON.stringify(parameters), currentScript.getAttribute('iframe_src'))
 }
 
-var retrieveAccount = function () {
+function retrieveAccount() {
     console.log("Script: Retrieve account")
 
     document.getElementById("ap_email_login").parentNode.removeChild(retrieveButton)
@@ -70,14 +70,14 @@ signUpButton.onclick = function() {
     document.getElementById("ap_email").parentNode.appendChild(generateButton)
 }
 
-document.getElementById("ap_email_login").parentNode.appendChild(signInButton)
+//document.getElementById("ap_email_login").parentNode.appendChild(signInButton)
 document.getElementById("ap_email").parentNode.appendChild(signUpButton)
 
 var node = document.createElement('style')
 node.innerHTML = "#PV_BUTTON { background-image: url(https://privowny.io/favicon.ico); vertical-align: middle; margin-left: -35px; height: 25px; width: 25px; color: white; border: 0; -webkit-appearance: none; background-repeat: no-repeat; background-size: 100% 100%; }"
 document.body.appendChild(node)
 
-var sendHeaders = function () {
+function sendHeaders() {
     console.log("Script: Send headers")
 
     var parameters = {
@@ -96,7 +96,7 @@ var sendHeaders = function () {
     myFrame.contentWindow.postMessage(JSON.stringify(parameters), currentScript.getAttribute('iframe_src'))
 }
 
-var createAccount = function () {
+function createAccount() {
     console.log("Script: Create account")
 
     var parameters = {
@@ -114,19 +114,19 @@ var form = document.getElementById("ap_register_form")
 
 form.addEventListener("submit", createAccount)
 
-var handleGenerateAlias = function (parameters) {
+function handleGenerateAlias(parameters) {
     console.log("Script: Handle generate alias")
 
     document.getElementById("ap_email").value = parameters["alias"]
 }
 
-var handleIsReady = function () {
+function handleIsReady() {
     console.log("Script: Handle is ready")
 
     sendHeaders()
 }
 
-var handleRetrieveAccount = function (parameters) {
+function handleRetrieveAccount(parameters) {
     console.log("Script: Handle retrieve account")
 
     document.getElementById("ap_email_login").value = parameters["username"]
