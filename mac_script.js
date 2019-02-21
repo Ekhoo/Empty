@@ -15,9 +15,6 @@ function generateAlias(e) {
     if (!(e instanceof MouseEvent)) { return }
     
     console.log("Script: Generate alias")
-
-    console.log(e)
-    e.cancelBubble = true
     
     document.getElementById("ap_email").parentNode.removeChild(generateButton)
 
@@ -30,9 +27,9 @@ function generateAlias(e) {
 }
 
 function retrieveAccount(e) {
+    if (!(e instanceof MouseEvent)) { return }
+    
     console.log("Script: Retrieve account")
-
-    e.preventDefault()
     
     document.getElementById("ap_email").parentNode.removeChild(retrieveButton)
 
@@ -95,14 +92,9 @@ function sendHeaders() {
     var parameters = {
         "command": "SET_HEADERS",
         "access_token": currentScript.getAttribute('access_token'),
-        "refresh_token": currentScript.getAttribute('refresh_token'),
-        "application_id": currentScript.getAttribute('application_id'),
         "authorization": currentScript.getAttribute('authorization'),
         "api_url": currentScript.getAttribute('api_url'),
-        "api_version": currentScript.getAttribute('api_version'),
-        "auth_url": currentScript.getAttribute('auth_url'),
-        "app_version": currentScript.getAttribute('app_version'),
-        "device_id": currentScript.getAttribute('device_id')
+        "api_version": currentScript.getAttribute('api_version')
     }
 
     myFrame.contentWindow.postMessage(JSON.stringify(parameters), currentScript.getAttribute('iframe_src'))
