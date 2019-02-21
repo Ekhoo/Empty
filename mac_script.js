@@ -51,10 +51,8 @@ retrieveButton.name = "RETRIEVE_BUTTON"
 retrieveButton.value = "Retrieve account"
 retrieveButton.onclick = retrieveAccount
 
-var signInButton = document.createElement("input")
-signInButton.type = "button"
+var signInButton = document.createElement("img")
 signInButton.id = "PV_BUTTON"
-signInButton.name = "PV_BUTTON"
 signInButton.onclick = function() {
     console.log("Script: Privowny sign in button taped")
 
@@ -80,7 +78,7 @@ if ((apEmail != null) && (signInAnchor != null)) {
 }
 
 var node = document.createElement('style')
-node.innerHTML = "#PV_BUTTON { background-image: url(https://privowny.io/favicon.ico); vertical-align: middle; margin-left: -35px; height: 25px; width: 25px; color: white; border: 0; -webkit-appearance: none; background-repeat: no-repeat; background-size: 100% 100%; }"
+node.innerHTML = "#PV_BUTTON { vertical-align: middle; margin-left: -35px; height: 25px; width: 25px; color: white; border: 0; -webkit-appearance: none; background-repeat: no-repeat; background-size: 100% 100%; }"
 document.body.appendChild(node)
 
 function sendHeaders() {
