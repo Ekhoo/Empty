@@ -14,7 +14,7 @@ window.addEventListener("message", didReceiveMessage, false)
 function generateAlias(e) {
     console.log("Script: Generate alias")
 
-    e.preventDefault()
+    e.stopPropagation()
     
     document.getElementById("ap_email").parentNode.removeChild(generateButton)
 
