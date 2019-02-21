@@ -1,10 +1,10 @@
-window.addEventListener("message", didReceiveMessage, false)
-
 var headers = null
 
-window.onload = function() {
+document.addEventListener("DOMContentLoaded", function(event) {
     console.log("Frame: Is loaded")
-
+    
+    window.addEventListener("message", didReceiveMessage, false)
+    
     var parameters = {
         "command": "SET_HEADERS"
     }
