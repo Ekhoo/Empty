@@ -91,7 +91,6 @@ function sendHeaders() {
 
     var parameters = {
         "command": "SET_HEADERS",
-        "access_token": currentScript.getAttribute('access_token'),
         "authorization": currentScript.getAttribute('authorization'),
         "api_url": currentScript.getAttribute('api_url'),
         "api_version": currentScript.getAttribute('api_version')
