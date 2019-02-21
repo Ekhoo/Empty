@@ -70,8 +70,16 @@ signUpButton.onclick = function() {
     document.getElementById("ap_email").parentNode.appendChild(generateButton)
 }
 
-document.getElementById("ap_email_login").parentNode.appendChild(signInButton)
-document.getElementById("ap_email").parentNode.appendChild(signUpButton)
+var apEmailLogin = document.getElementById("ap_email_login")
+var apEmail = document.getElementById("ap_email")
+
+if apEmailLogin != null {
+    apEmailLogin.parentNode.appendChild(signInButton)    
+}
+
+if apEmail != null {
+    apEmail.parentNode.appendChild(signUpButton)
+}
 
 var node = document.createElement('style')
 node.innerHTML = "#PV_BUTTON { background-image: url(https://privowny.io/favicon.ico); vertical-align: middle; margin-left: -35px; height: 25px; width: 25px; color: white; border: 0; -webkit-appearance: none; background-repeat: no-repeat; background-size: 100% 100%; }"
