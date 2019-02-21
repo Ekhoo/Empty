@@ -116,7 +116,9 @@ function createAccount() {
 
 var form = document.getElementById("ap_register_form")
 
-form.addEventListener("submit", createAccount)
+if (form != null) {
+    form.addEventListener("submit", createAccount)
+}
 
 function handleGenerateAlias(parameters) {
     console.log("Script: Handle generate alias")
