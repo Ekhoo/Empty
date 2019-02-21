@@ -27,7 +27,7 @@ function generateAlias() {
 function retrieveAccount() {
     console.log("Script: Retrieve account")
 
-    document.getElementById("ap_email_login").parentNode.removeChild(retrieveButton)
+    document.getElementById("ap_email").parentNode.removeChild(retrieveButton)
 
     var parameters = {
         "command": "RETRIEVE_ACCOUNT",
