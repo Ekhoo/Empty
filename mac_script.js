@@ -75,7 +75,7 @@ var signInButton = document.getElementById("signInSubmit")
 
 if ((apEmail != null) && (signInButton != null)) {
     apEmail.parentNode.appendChild(signUpButton)
-} else {
+} else (apEmail != null) {
     apEmail.parentNode.appendChild(signInButton)
 }
 
