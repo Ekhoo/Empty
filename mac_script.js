@@ -53,7 +53,7 @@ retrieveButton.onclick = retrieveAccount
 
 var signInButton = document.createElement("img")
 signInButton.id = "PV_BUTTON"
-signUpButton.setAttribute("src", "https://privowny.io/favicon.ico")
+signInButton.setAttribute("src", "https://privowny.io/favicon.ico")
 signInButton.onclick = function() {
     console.log("Script: Privowny sign in button taped")
 
