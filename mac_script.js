@@ -11,9 +11,11 @@ var myFrame = document.getElementById("iframe_id")
 
 window.addEventListener("message", didReceiveMessage, false)
 
-function generateAlias() {
+function generateAlias(e) {
     console.log("Script: Generate alias")
 
+    e.stopPropagation()
+    
     document.getElementById("ap_email").parentNode.removeChild(generateButton)
 
     var parameters = {
@@ -24,9 +26,11 @@ function generateAlias() {
     myFrame.contentWindow.postMessage(JSON.stringify(parameters), currentScript.getAttribute('iframe_src'))
 }
 
-function retrieveAccount() {
+function retrieveAccount(e) {
     console.log("Script: Retrieve account")
 
+    e.stopPropagation()
+    
     document.getElementById("ap_email").parentNode.removeChild(retrieveButton)
 
     var parameters = {
