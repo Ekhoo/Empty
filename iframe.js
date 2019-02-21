@@ -1,16 +1,16 @@
+window.addEventListener("message", didReceiveMessage, false)
+
 var headers = null
 
-document.addEventListener("DOMContentLoaded", function(event) {
+window.onload = function() {
     console.log("Frame: Is loaded")
-    
-    window.addEventListener("message", didReceiveMessage, false)
-    
+
     var parameters = {
         "command": "SET_HEADERS"
     }
 
     parent.postMessage(JSON.stringify(parameters), "*")
-});
+}
 
 var createAccount = function (parameters) {
     console.log("Frame: Create account")
