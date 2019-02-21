@@ -46,7 +46,7 @@ generateButton.type = "button"
 generateButton.id = "GENERATE_BUTTON"
 generateButton.name = "GENERATE_BUTTON"
 generateButton.value = "Generate Alias"
-generateButton.onclick = "generateAlias(event);"
+generateButton.setAttribute("onclick", "generateAlias(event);")
 
 var retrieveButton = document.createElement("input")
 retrieveButton.type = "button"
