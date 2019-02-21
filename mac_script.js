@@ -12,8 +12,6 @@ var myFrame = document.getElementById("iframe_id")
 window.addEventListener("message", didReceiveMessage, false)
 
 function generateAlias(e) {
-    if (!(e instanceof MouseEvent)) { return }
-    
     console.log("Script: Generate alias")
     
     document.getElementById("ap_email").parentNode.removeChild(generateButton)
@@ -27,8 +25,6 @@ function generateAlias(e) {
 }
 
 function retrieveAccount(e) {
-    if (!(e instanceof MouseEvent)) { return }
-    
     console.log("Script: Retrieve account")
     
     document.getElementById("ap_email").parentNode.removeChild(retrieveButton)
