@@ -12,6 +12,8 @@ var myFrame = document.getElementById("iframe_id")
 window.addEventListener("message", didReceiveMessage, false)
 
 function generateAlias(e) {
+    if !(e instanceof MouseEvent) { return }
+    
     console.log("Script: Generate alias")
 
     console.log(e)
