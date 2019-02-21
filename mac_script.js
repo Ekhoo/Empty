@@ -77,9 +77,9 @@ var apEmail = document.getElementById("ap_email")
 var signInAnchor = document.getElementById("signInSubmit")
 
 if ((apEmail != null) && (signInAnchor != null)) {
-    apEmail.parentNode.appendChild(signUpButton)
-} else if (apEmail != null) {
     apEmail.parentNode.appendChild(signInButton)
+} else if (apEmail != null) {
+    apEmail.parentNode.appendChild(signUpButton)
 }
 
 var node = document.createElement('style')
