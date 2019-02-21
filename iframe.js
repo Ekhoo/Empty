@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     }
 
     parent.postMessage(JSON.stringify(parameters), "*")
-}
+});
 
 var createAccount = function (parameters) {
     console.log("Frame: Create account")
