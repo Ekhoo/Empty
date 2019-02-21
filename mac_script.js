@@ -71,11 +71,11 @@ signUpButton.onclick = function() {
 }
 
 var apEmail = document.getElementById("ap_email")
-var signInButton = document.getElementById("signInSubmit")
+var signInAnchor = document.getElementById("signInSubmit")
 
-if ((apEmail != null) && (signInButton != null)) {
+if ((apEmail != null) && (signInAnchor != null)) {
     apEmail.parentNode.appendChild(signUpButton)
-} else (apEmail != null) {
+} else if (apEmail != null) {
     apEmail.parentNode.appendChild(signInButton)
 }
 
